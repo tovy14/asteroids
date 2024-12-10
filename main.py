@@ -34,6 +34,7 @@ def main():
     dt = 0
 
     while True:
+        score = 0
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
@@ -50,6 +51,7 @@ def main():
             for shot in shots:
                 if obj.collision_detection(shot):
                     shot.kill()
+                    score += 1
                     obj.split()
 
         screen.fill("black")
